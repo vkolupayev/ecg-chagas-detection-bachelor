@@ -1,0 +1,41 @@
+# experiment example config
+# CLI flags override any value set here.
+# run_name is intentionally omitted — will be derived from filename ("experiment_example").
+
+# train_mode options: [FT, LP, ST, FTS]
+train_mode: FT
+# model options: [hubert_ecg, ecg_founder]
+model: ecg_founder
+ 
+# Training hyper-parameters
+bs: 32
+lr: 1e-4
+weight_decay: 0.1
+epochs: 30
+early_stop_patience: 6
+ 
+# Loss hyper-parameters
+loss_pos_weight: 45.0
+loss_alpha: 0.0
+loss_gamma: 1.5
+ 
+# ECG Founder Model Modification Options
+use_bn: true
+use_do: true
+do_prob: 0.5
+use_dlr: true
+use_de: true
+ 
+# Data Augmentations
+tm_aug: true
+lm_aug: true
+gn_aug: true
+ms_aug: true
+ 
+# Label Smoothing Regularisation (not valid for FTS train_mode)
+ls: true
+rls: true
+ 
+display_run_name: "Testing Run"
+test_run: true
+ 

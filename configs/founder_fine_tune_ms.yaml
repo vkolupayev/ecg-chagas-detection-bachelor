@@ -1,0 +1,34 @@
+train_mode: FT
+model: ecg_founder
+
+# Training hyper-parameters
+bs: 256
+lr: 1e-4
+weight_decay: 0.1
+epochs: 30
+early_stop_patience: 6
+
+# Loss hyper-parameters
+loss_pos_weight: 45.0
+loss_alpha: 0.0
+loss_gamma: 1.5
+
+# ecg_founder options
+use_bn: false
+use_do: false
+# do_prob: 0.5
+use_dlr: false
+use_de: false
+
+# Data Augmentation
+tm_aug: false
+lm_aug: false
+gn_aug: false
+ms_aug: true
+
+# Label Smoothing Regularisations (are not valid for FTS train_mode)
+ls: false
+rls: false
+
+display_run_name: "ECG Founder Magnitude Scaling Fine Tune"
+test_run: false

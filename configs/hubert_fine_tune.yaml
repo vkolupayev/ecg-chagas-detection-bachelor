@@ -1,0 +1,27 @@
+train_mode: FT
+model: hubert_ecg
+
+# Training hyper-parameters
+bs: 64
+lr: 1e-5
+weight_decay: 0.01
+epochs: 30
+early_stop_patience: 6
+
+# Loss hyper-parameters
+loss_pos_weight: 45.0
+loss_alpha: 0.0
+loss_gamma: 1.5
+
+# Data Augmentation
+tm_aug: false
+lm_aug: false
+gn_aug: false
+ms_aug: false
+
+# Label Smoothing Regularisations (are not valid for FTS train_mode)
+ls: false
+rls: false
+
+display_run_name: "HuBERT-ECG FT"
+test_run: false
